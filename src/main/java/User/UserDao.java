@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -70,12 +71,18 @@ public class UserDao extends Dao<User>{
         User user = null;
         try{
             user = new User();
+            
             user.setName(rs.getString("name"));
+            
             user.setId(rs.getLong("id"));
+            
             user.setActive(rs.getBoolean("active"));
+            
             user.setEmail(rs.getString("email"));
-            user.setLastAccess(rs.getDate("LastAccess").toLocalDate());
-        }catch( SQLException ex ){
+            
+            user.setLastAccess(rs.getObject("LastAccess",LocalDateTime.class));
+            
+        }catch( Exception ex ){
             System.out.println("Exception in extractObject: " + ex);
         }
         return user;

@@ -21,7 +21,7 @@ public class User extends Entity{
     public User() {
     }
     
-    public User(String name, String email, String password, LocalDate LastAccess, Boolean active,Long id) throws Exception{
+    public User(String name, String email, String password, LocalDateTime LastAccess, Boolean active,Long id) throws Exception{
         //this.setName(name);
         setName(name);
         //this.setEmail(email);
@@ -87,11 +87,11 @@ public class User extends Entity{
         }
     }
 
-    public LocalDate getLastAccess() {
+    public LocalDateTime getLastAccess() {
         return LastAccess;
     }
 
-    public void setLastAccess(LocalDate LastAccess) throws Exception{
+    public void setLastAccess(LocalDateTime LastAccess) throws Exception{
         if(LastAccess== null)
         {
            throw new IllegalArgumentException("User: LastAccess e null"); 
