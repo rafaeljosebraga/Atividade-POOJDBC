@@ -5,7 +5,7 @@
 package User;
 
 import br.edu.ifnmg.entity.Entity;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -15,7 +15,7 @@ public class User extends Entity{
     private String name;
     private String email;
     private String password;
-    private LocalDate LastAccess;
+    private LocalDateTime LastAccess;
     private Boolean active;
 
     public User() {
