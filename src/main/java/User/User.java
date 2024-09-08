@@ -41,7 +41,7 @@ public class User extends Entity{
         return name;
     }
 
-    public void setName(String name) throws exception {
+    public void setName(String name) throws Exception {
         if(name.length()>150)
         {
             throw new IllegalArgumentException("User: nome excede 150 caracteres");
