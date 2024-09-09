@@ -109,7 +109,7 @@ public abstract class Dao<E>
     }
 
     @Override
-    public List<E> findAll() {
+    public ArrayList<E> findAll() {
 
         try (PreparedStatement preparedStatement
                 = DbConnection.getConnection().prepareStatement(

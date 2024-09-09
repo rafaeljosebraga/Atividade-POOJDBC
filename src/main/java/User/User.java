@@ -92,7 +92,7 @@ public class User extends Entity{
     }
 
     public void setLastAccess(LocalDateTime LastAccess) throws Exception{
-        if(LastAccess== null)
+        if(LastAccess == null)
         {
            throw new IllegalArgumentException("User: LastAccess e null"); 
         }else{
