@@ -26,7 +26,7 @@ public class DataPersistence {
         //</editor-fold>
 
         //<editor-fold defaultstate="collapsed" desc="inserção-1">
-        System.out.println(dateTime);
+        System.out.println("Iniciando Inserções:");
         userID1=null;
         try {
             User user1;
@@ -116,7 +116,7 @@ public class DataPersistence {
         //</editor-fold>
         
         //<editor-fold defaultstate="collapsed" desc="inserção-6">
-        date=LocalDate.now();
+        date=LocalDate.now().minusDays(1);
                 
         time=LocalTime.of(23, 59);
         
@@ -136,7 +136,7 @@ public class DataPersistence {
         //</editor-fold>
         //Atualização
         //<editor-fold defaultstate="collapsed" desc="4.2">
-        
+        System.out.println("Fim das insercoes.\niniciando updates:");
         //<editor-fold defaultstate="collapsed" desc="Update-1">
         
         try{

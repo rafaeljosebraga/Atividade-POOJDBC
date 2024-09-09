@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package User;
 
 import repository.Dao;
@@ -20,6 +17,7 @@ import java.util.ArrayList;
 public class UserDao extends Dao<User>{
     
     public static final String TABLE = "user";
+    
     //<editor-fold defaultstate="collapsed" desc="getsStatements">
     
 
@@ -48,6 +46,7 @@ public class UserDao extends Dao<User>{
         return "delete from " + TABLE + " where id = ?";
     }
     //</editor-fold>
+    
     @Override
     public void composeSaveOrUpdateStatement(PreparedStatement pstmt, User user) {
         try{
@@ -91,7 +90,7 @@ public class UserDao extends Dao<User>{
         }
         return user;
     }
-
+    //Este método foi requisitado pelo modelo da atividade, mas não foi utilizado.
     public ArrayList<User> findInactives() {
         ArrayList<User> users;
 
@@ -116,7 +115,7 @@ public class UserDao extends Dao<User>{
 
         return null;
     }
-
+    //Este método não foi requisitado pelo UML da atividade, mas foi utilizado.
     public ArrayList<User> findActives() {
         ArrayList<User> users;
 

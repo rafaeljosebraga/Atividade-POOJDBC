@@ -35,8 +35,8 @@ public class User extends Entity{
         setActive(active);
     }
     
-    
-    
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
+
     public String getName() {
         return name;
     }
@@ -112,7 +112,8 @@ public class User extends Entity{
         }
         this.active = active;
     }
-
+    //</editor-fold>
+    
     @Override
     public String toString() {
         return "User{" + "name=" + name 
