@@ -33,7 +33,7 @@ public class UserDao extends Dao<User>{
 
     @Override
     public String getFindByIdStatment() {
-        return "select name, email, password, active, id from " + TABLE + " where id = ?";
+        return "select name, email, password, lastAccess, active, id from " + TABLE + " where id = ?";
     }
 
     @Override
@@ -80,7 +80,9 @@ public class UserDao extends Dao<User>{
             
             user.setEmail(rs.getString("email"));
             
-            user.setLastAccess(rs.getObject("LastAccess",LocalDateTime.class));
+            user.setPassword(rs.getString("password"));
+            
+            user.setLastAccess(rs.getObject("lastAccess",LocalDateTime.class));
             
         }catch( Exception ex ){
             System.out.println("Exception in extractObject: " + ex);
@@ -90,7 +92,7 @@ public class UserDao extends Dao<User>{
 
     @Override
 public ArrayList<User> findInactives() {
-    ArrayList<User> users = new ArrayList<>();
+    ArrayList<User> users;
     
     // Define a query para selecionar os usuários inativos
     String query = "SELECT * FROM "+TABLE+" WHERE active = false";
@@ -106,12 +108,36 @@ public ArrayList<User> findInactives() {
 
         // Extrai e retorna os objetos correspondentes
         users = extractObjects(resultSet);
-
+        return users;
     } catch (Exception ex) {
         System.out.println("Exception: " + ex);
     }
     
-    return users;
+    return null;
 }
 
+    public ArrayList<User> findActives() {
+        ArrayList<User> users;
+
+        // Define a query para selecionar os usuários inativos
+        String query = "SELECT * FROM "+TABLE+" WHERE active = true";
+
+        try (PreparedStatement preparedStatement
+                    = DbConnection.getConnection().prepareStatement(query)) {
+
+            // Mostra a sentença SQL completa
+            System.out.println(">> SQL: " + preparedStatement);
+
+            // Executa a query no banco de dados
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Extrai e retorna os objetos correspondentes
+            users = extractObjects(resultSet);
+            return users;
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex);
+        }
+
+        return null;
+    }
 }
