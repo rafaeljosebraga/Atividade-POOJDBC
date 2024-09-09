@@ -8,3 +8,7 @@ para este trabalho foi utilizado mysql-connector-j-8.3.0
 nesse caso foi colocado dentro do arquivo do githut o script para o uso do código.
 <p>Visite o <a href="https://github.com/rafaeljosebraga/Atividade-POOJDBC/blob/main/script.sql">script</a>.</p>
 
+
+<h3>Envolvidos<>
+<p><a href="https://github.com/rafaeljosebraga">Rafael José</a>;</p>
+<p><a href="https://github.com/BeruasCS">Bernardo Ruas</a>;</p>
