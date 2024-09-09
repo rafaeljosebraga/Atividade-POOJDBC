@@ -1,5 +1,7 @@
-<h1>Detalhamento</h1>
-Esta é a Atividade Avaliativa JDBC feito por mim e por Bernardo Ruas durante a disciplina de Programação Orientada a Objetos
+<h1>Sobre a Atividade</h1>
+Esta é a Atividade Avaliativa JDBC feito por mim e por Bernardo Ruas durante a disciplina de Programação Orientada a Objetos.
+<h3>Explicaçao Detalhada</h3>
+Este código executa vários testes indicados pela atividade passada pelo professor dentro do contexto de um CRUd sem interfáce gráfica, reforçando o aprendizado em SQL e na integração entre o banco e o código. 
 <h2>Dependências</h2>
 para este trabalho foi utilizado mysql-connector-j-8.3.0
 <h2>Sobre o scriptSQL</h2>
