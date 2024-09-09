@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package User;
 
 import entity.Entity;
@@ -22,7 +19,7 @@ public class User extends Entity{
     }
     
     public User(String name, String email, String password, LocalDateTime LastAccess, Boolean active,Long id) throws Exception{
-        //O this nessas chamadas de métodos está implícito
+        //O this nessas chamadas de métodos está implícito conforme entendemos em sala de aula.
         //this.setName(name);
         setName(name);
         //this.setEmail(email);

@@ -5,6 +5,7 @@ import User.UserDao;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 
 public class DataPersistence {
@@ -208,12 +209,25 @@ public class DataPersistence {
         //</editor-fold>
         //Impressão do terceiro objeto recuperado
         //<editor-fold defaultstate="collapsed" desc="4.3">
+        System.out.println("Impressão do elemento 3 no banco");
+        try{
+            ArrayList<User> users=new UserDao().findAll();
+            System.out.println(users.get(2));
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
+        //<editor-fold defaultstate="collapsed" desc="TesteAntigo">
+        /*
         try{
           User user=new UserDao().findById(userID3);
             System.out.println(user);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
+        */
+        //</editor-fold>
+       
         //</editor-fold>
         //Impressão de todos os objetos
         //<editor-fold defaultstate="collapsed" desc="4.4">
@@ -241,6 +255,7 @@ public class DataPersistence {
         //</editor-fold>
         //Remoção do quarto objeto inserido
         //<editor-fold defaultstate="collapsed" desc="4.6">
+        System.out.println("delete da inserção 4");
         try{
         System.out.println("");
         new UserDao().delete(userID5);
