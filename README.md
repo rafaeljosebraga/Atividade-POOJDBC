@@ -9,6 +9,6 @@ nesse caso foi colocado dentro do arquivo do githut o script para o uso do códi
 <p>Visite o <a href="https://github.com/rafaeljosebraga/Atividade-POOJDBC/blob/main/script.sql">script</a>.</p>
 
 
-<h3>Envolvidos<>
+<h3>Envolvidos</h3>
 <p><a href="https://github.com/rafaeljosebraga">Rafael José</a>;</p>
 <p><a href="https://github.com/BeruasCS">Bernardo Ruas</a>;</p>
