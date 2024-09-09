@@ -22,12 +22,17 @@ public class User extends Entity{
     }
     
     public User(String name, String email, String password, LocalDate LastAccess, Boolean active,Long id){
-        this.setName(name);
-        this.setEmail(email);
-        this.setPassword(password);
-        this.setLastAccess(LastAccess);
-        this.setActive(active);
-        setId(id);
+        //this.setName(name);
+        setName(name);
+        //this.setEmail(email);
+        setEmail(email);
+        //this.setPassword(password);
+        setPassword(password);
+        //this.setLastAccess(LastAccess);
+        setLastAccess(LastAccess);
+        //this.setActive(active);
+        setActive(active);
+       // setId(id);
     }
     
     
@@ -36,32 +41,63 @@ public class User extends Entity{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) throws exception {
+        if(name.length()>150)
+        {
+            throw new IllegalArgumentException("User: nome excede 150 caracteres");
+        }else if(name== null)
+        {
+           throw new IllegalArgumentException("User: nome e null"); 
+        }else{
+            this.name = name;
+        }
+            
+            
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email) throws exception{
+         if(email.length()>255)
+        {
+            throw new IllegalArgumentException("User: nome excede 255 caracteres");
+        }else if(email== null)
+        {
+           throw new IllegalArgumentException("User: email e null"); 
+        }else{
+            this.email = email;
+        }
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String password) throws exception{
+           if(password.length()>64)
+        {
+            throw new IllegalArgumentException("User: nome excede 64 caracteres");
+        }else if(password== null)
+        {
+           throw new IllegalArgumentException("User: email e null"); 
+        }else{
+            this.password = password;
+        }
     }
 
     public LocalDate getLastAccess() {
         return LastAccess;
     }
 
-    public void setLastAccess(LocalDate LastAccess) {
-        this.LastAccess = LastAccess;
+    public void setLastAccess(LocalDate LastAccess) throws exception{
+        if(LastAccess== null)
+        {
+           throw new IllegalArgumentException("User: LastAccess e null"); 
+        }else{
+            this.LastAccess = LastAccess;
+        }
     }
 
     public Boolean getActive() {
@@ -69,6 +105,11 @@ public class User extends Entity{
     }
 
     public void setActive(Boolean active) {
+        if(active == null){
+            
+            this.active=true;
+            return;
+        }
         this.active = active;
     }
 
