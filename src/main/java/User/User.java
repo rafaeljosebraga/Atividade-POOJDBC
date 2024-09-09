@@ -21,7 +21,7 @@ public class User extends Entity{
     public User() {
     }
     
-    public User(String name, String email, String password, LocalDate LastAccess, Boolean active,Long id){
+    public User(String name, String email, String password, LocalDate LastAccess, Boolean active,Long id) throws Exception{
         //this.setName(name);
         setName(name);
         //this.setEmail(email);
@@ -41,7 +41,7 @@ public class User extends Entity{
         return name;
     }
 
-    public void setName(String name) throws exception {
+    public void setName(String name) throws Exception {
         if(name.length()>150)
         {
             throw new IllegalArgumentException("User: nome excede 150 caracteres");
@@ -59,7 +59,7 @@ public class User extends Entity{
         return email;
     }
 
-    public void setEmail(String email) throws exception{
+    public void setEmail(String email) throws Exception{
          if(email.length()>255)
         {
             throw new IllegalArgumentException("User: nome excede 255 caracteres");
@@ -75,7 +75,7 @@ public class User extends Entity{
         return password;
     }
 
-    public void setPassword(String password) throws exception{
+    public void setPassword(String password) throws Exception{
            if(password.length()>64)
         {
             throw new IllegalArgumentException("User: nome excede 64 caracteres");
@@ -91,7 +91,7 @@ public class User extends Entity{
         return LastAccess;
     }
 
-    public void setLastAccess(LocalDate LastAccess) throws exception{
+    public void setLastAccess(LocalDate LastAccess) throws Exception{
         if(LastAccess== null)
         {
            throw new IllegalArgumentException("User: LastAccess e null"); 
