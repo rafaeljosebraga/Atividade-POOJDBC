@@ -210,23 +210,23 @@ public class DataPersistence {
         //</editor-fold>
         //Impressão do terceiro objeto recuperado
         //<editor-fold defaultstate="collapsed" desc="4.3">
+        
         System.out.println("Impressão do elemento 3 no banco");
-        try{
+        //<editor-fold defaultstate="collapsed" desc="TesteAntigo">
+        /*try{
             ArrayList<User> users=new UserDao().findAll();
             System.out.println(users.get(2));
         } catch(Exception e){
             System.out.println(e.getMessage());
-        }
-        
-        //<editor-fold defaultstate="collapsed" desc="TesteAntigo">
-        /*
+        }*/
+         //</editor-fold>
+        //<editor-fold defaultstate="collapsed" desc="TesteAtual">
         try{
           User user=new UserDao().findById(userID3);
             System.out.println(user);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
-        */
         //</editor-fold>
        
         //</editor-fold>
