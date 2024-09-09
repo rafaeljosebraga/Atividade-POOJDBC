@@ -88,13 +88,8 @@ public class User extends Entity{
         return LastAccess;
     }
 
-    public void setLastAccess(LocalDateTime LastAccess) throws Exception{
-        if(LastAccess == null)
-        {
-           throw new IllegalArgumentException("User: LastAccess e null"); 
-        }else{
-            this.LastAccess = LastAccess;
-        }
+    public void setLastAccess(LocalDateTime LastAccess) {
+        this.LastAccess = LastAccess;
     }
 
     public Boolean getActive() {

@@ -56,8 +56,11 @@ public class UserDao extends Dao<User>{
                 pstmt.setObject(2,user.getEmail(), Types.VARCHAR);
             if(user.getPassword() != null)
                 pstmt.setObject(3, user.getPassword(), java.sql.Types.VARCHAR);
-            if(user.getLastAccess() != null)
+            if(user.getLastAccess() != null){
                 pstmt.setObject(4, user.getLastAccess(), Types.TIMESTAMP);
+            } else{
+                pstmt.setNull(4, Types.TIMESTAMP);
+            }
             if(user.getActive() != null)
                 pstmt.setObject(5,user.getActive(), Types.BOOLEAN);
             if(user.getId() != null)

@@ -84,11 +84,12 @@ public class DataPersistence {
         
         //<editor-fold defaultstate="collapsed" desc="inserção-4">
         //4
-        Long userID4;
+        dateTime=null;
+        Long userID4=null;
         try {
             User user4=null;
             user4 = new User(
-                    "Débora Wendel","debora.w@mail.com","147",null,false
+                    "Débora Wendel","debora.w@mail.com","147",dateTime,false
                     ,null);
             userID4 = new UserDao().saveOrUpdate(user4);
             user4.setId(userID4);
@@ -169,11 +170,11 @@ public class DataPersistence {
             System.out.println(e.getMessage());
         }
         //</editor-fold>  
-        
+        //Corrigido
         //Debora não pode ser atualizada pois não existe no banco de dados.
         //portanto o update 3 não acontece para o banco de dados.
         //<editor-fold defaultstate="collapsed" desc="Update-3">
-        /*try{
+        try{
         User User4Aux = new UserDao().findById(userID4);
         System.out.println("Buscando usuario: " + User4Aux);
         
@@ -185,7 +186,7 @@ public class DataPersistence {
 
         }catch(Exception e){
             System.out.println(e.getMessage());
-        }*/
+        }
         //</editor-fold> 
         
         //<editor-fold defaultstate="collapsed" desc="Update-4?">
@@ -197,7 +198,7 @@ public class DataPersistence {
         time = LocalTime.now();
         dateTime = LocalDateTime.of(date, time);
         User5Aux.setLastAccess(dateTime);
-        User5Aux.setPassword("&asdfqwerty");
+        User5Aux.setPassword("asdfqwerty");
         
         new UserDao().saveOrUpdate(User5Aux);
         System.out.println(">> O usuário foi atulizado");
@@ -258,7 +259,7 @@ public class DataPersistence {
         System.out.println("delete da inserção 4");
         try{
         System.out.println("");
-        new UserDao().delete(userID5);
+        new UserDao().delete(userID4);
         } catch(Exception e)   {
             System.out.println(e.getMessage());
         }
