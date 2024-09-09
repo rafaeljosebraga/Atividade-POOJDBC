@@ -22,6 +22,7 @@ public class User extends Entity{
     }
     
     public User(String name, String email, String password, LocalDateTime LastAccess, Boolean active,Long id) throws Exception{
+        //O this nessas chamadas de métodos está implícito
         //this.setName(name);
         setName(name);
         //this.setEmail(email);
@@ -32,7 +33,6 @@ public class User extends Entity{
         setLastAccess(LastAccess);
         //this.setActive(active);
         setActive(active);
-       // setId(id);
     }
     
     

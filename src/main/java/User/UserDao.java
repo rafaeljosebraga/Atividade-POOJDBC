@@ -20,6 +20,8 @@ import java.util.ArrayList;
 public class UserDao extends Dao<User>{
     
     public static final String TABLE = "user";
+    //<editor-fold defaultstate="collapsed" desc="getsStatements">
+    
 
     @Override
     public String getSaveStatment () {
@@ -45,7 +47,7 @@ public class UserDao extends Dao<User>{
     public String getDeleteStatement() {
         return "delete from " + TABLE + " where id = ?";
     }
-
+    //</editor-fold>
     @Override
     public void composeSaveOrUpdateStatement(PreparedStatement pstmt, User user) {
         try{
@@ -90,31 +92,30 @@ public class UserDao extends Dao<User>{
         return user;
     }
 
-    @Override
-public ArrayList<User> findInactives() {
-    ArrayList<User> users;
-    
-    // Define a query para selecionar os usuários inativos
-    String query = "SELECT * FROM "+TABLE+" WHERE active = false";
-    
-    try (PreparedStatement preparedStatement
-                = DbConnection.getConnection().prepareStatement(query)) {
+    public ArrayList<User> findInactives() {
+        ArrayList<User> users;
 
-        // Mostra a sentença SQL completa
-        System.out.println(">> SQL: " + preparedStatement);
+        // Define a query para selecionar os usuários inativos
+        String query = "SELECT * FROM "+TABLE+" WHERE active = false";
 
-        // Executa a query no banco de dados
-        ResultSet resultSet = preparedStatement.executeQuery();
+        try (PreparedStatement preparedStatement
+                    = DbConnection.getConnection().prepareStatement(query)) {
 
-        // Extrai e retorna os objetos correspondentes
-        users = extractObjects(resultSet);
-        return users;
-    } catch (Exception ex) {
-        System.out.println("Exception: " + ex);
+            // Mostra a sentença SQL completa
+            System.out.println(">> SQL: " + preparedStatement);
+
+            // Executa a query no banco de dados
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Extrai e retorna os objetos correspondentes
+            users = extractObjects(resultSet);
+            return users;
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex);
+        }
+
+        return null;
     }
-    
-    return null;
-}
 
     public ArrayList<User> findActives() {
         ArrayList<User> users;

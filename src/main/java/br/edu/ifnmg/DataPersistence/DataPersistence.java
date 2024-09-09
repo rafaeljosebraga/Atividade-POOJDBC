@@ -10,17 +10,18 @@ import java.time.LocalTime;
 public class DataPersistence {
 
     public static void main(String[] args) {
+        /*
+        Cada pedaço das operações resquisitadas no banco foi separada por 
+        questões dentro de editor folders
+        */
+        //Inserção
+        //<editor-fold defaultstate="collapsed" desc="4.1">
         
         //<editor-fold defaultstate="collapsed" desc="Variaveis Auxiliares">
         
         Long userID1;
-                // Obtém a data de ontem
         LocalDate date = LocalDate.now().minusDays(1);
-        
-        // Define o horário para 17:00
         LocalTime time = LocalTime.of(17, 0);
-        
-        // Combina a data de ontem com o horário das 17:00
         LocalDateTime dateTime = LocalDateTime.of(date, time);
         //</editor-fold>
 
@@ -132,8 +133,12 @@ public class DataPersistence {
             System.out.println(e.getMessage());
         }
         //</editor-fold>
+        //</editor-fold>
+        //Atualização
+        //<editor-fold defaultstate="collapsed" desc="4.2">
         
-        //<editor-fold defaultstate="collapsed" desc="Atualizar registro">
+        //<editor-fold defaultstate="collapsed" desc="Update-1">
+        
         try{
         User User1Aux = new UserDao().findById(userID1);
         System.out.println("Buscando usuario: " + User1Aux);
@@ -149,7 +154,9 @@ public class DataPersistence {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
+        //</editor-fold>
         
+        //<editor-fold defaultstate="collapsed" desc="Update-2">
         try{
         User User3Aux = new UserDao().findById(userID3);
         System.out.println("Buscando usuario: " + User3Aux);
@@ -160,8 +167,11 @@ public class DataPersistence {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
-          
+        //</editor-fold>  
+        
         //Debora não pode ser atualizada pois não existe no banco de dados.
+        //portanto o update 3 não acontece para o banco de dados.
+        //<editor-fold defaultstate="collapsed" desc="Update-3">
         /*try{
         User User4Aux = new UserDao().findById(userID4);
         System.out.println("Buscando usuario: " + User4Aux);
@@ -175,7 +185,9 @@ public class DataPersistence {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }*/
+        //</editor-fold> 
         
+        //<editor-fold defaultstate="collapsed" desc="Update-4?">
         try{
         User User5Aux = new UserDao().findById(userID5);
         System.out.println("Buscando usuario: " + User5Aux);
@@ -188,11 +200,13 @@ public class DataPersistence {
         
         new UserDao().saveOrUpdate(User5Aux);
         System.out.println(">> O usuário foi atulizado");
-
+        
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
         //</editor-fold>
+        //</editor-fold>
+        //Impressão do terceiro objeto recuperado
         //<editor-fold defaultstate="collapsed" desc="4.3">
         try{
           User user=new UserDao().findById(userID3);
@@ -201,7 +215,7 @@ public class DataPersistence {
             System.out.println(e.getMessage());
         }
         //</editor-fold>
-        
+        //Impressão de todos os objetos
         //<editor-fold defaultstate="collapsed" desc="4.4">
         try {
             UserDao buscaUsuario = new UserDao();
@@ -213,7 +227,7 @@ public class DataPersistence {
             System.out.println(e.getMessage());
         }
         //</editor-fold>
-        
+        //Impressão de todos os objetos ativos
         //<editor-fold defaultstate="collapsed" desc="4.5">
         try {
             UserDao buscaUsuario = new UserDao();
@@ -225,7 +239,7 @@ public class DataPersistence {
             System.out.println(e.getMessage());
         }
         //</editor-fold>
-        
+        //Remoção do quarto objeto inserido
         //<editor-fold defaultstate="collapsed" desc="4.6">
         try{
         System.out.println("");

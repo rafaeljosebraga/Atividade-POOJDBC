@@ -30,9 +30,6 @@ public interface IDao<E> {
 
     public void delete(Long id);
 
-    //Inactives
-//    public String getFindAllActiveStatement();
-    public List<E> findInactives();
 
     // Assembly objects
     public E extractObject(ResultSet resultSet);
