@@ -4,8 +4,8 @@
  */
 package User;
 
-import br.edu.ifnmg.repository.Dao;
-import br.edu.ifnmg.repository.DbConnection;
+import repository.Dao;
+import repository.DbConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package br.edu.ifnmg.entity;
+package entity;
 
 public abstract class Entity {
 

@@ -4,7 +4,7 @@
  */
 package User;
 
-import br.edu.ifnmg.entity.Entity;
+import entity.Entity;
 import java.time.LocalDateTime;
 
 /**

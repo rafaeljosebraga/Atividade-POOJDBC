@@ -48,7 +48,7 @@ public class DataPersistence {
         try {
             User user;
             user = new User(
-                    "Ana Zaira","a.zaira@mail.com","123",dateTime,true
+                    "Beatriz Yana","b.yana@mail.com","456",dateTime,true
                     ,null);
         userID = new UserDao().saveOrUpdate(user);
         user.setId(userID);
@@ -56,16 +56,27 @@ public class DataPersistence {
             System.out.println(e.getMessage());
         }
         //3
-        date=LocalDate.now();
+        date=LocalDate.now().minusDays(2);
                 
-        time=LocalTime.of(3, 0);
+        time=LocalTime.of(12, 0);
         
         dateTime = LocalDateTime.of(date, time);
         
         try {
             User user;
             user = new User(
-                    "Ana Zaira","a.zaira@mail.com","123",dateTime,true
+                    "Cecília Xerxes","c.xerxes@mail.com","789",dateTime,true
+                    ,null);
+        userID = new UserDao().saveOrUpdate(user);
+        user.setId(userID);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        try {
+            User user;
+            user = new User(
+                    "Débora Wendel","debora.w@mail.com","147",null,false
                     ,null);
         userID = new UserDao().saveOrUpdate(user);
         user.setId(userID);
@@ -75,14 +86,14 @@ public class DataPersistence {
         
         date=LocalDate.now();
                 
-        time=LocalTime.of(3, 0);
+        time=LocalTime.of(6, 0);
         
         dateTime = LocalDateTime.of(date, time);
         
         try {
             User user;
             user = new User(
-                    "Ana Zaira","a.zaira@mail.com","123",dateTime,true
+                    "Eugênia Vale","e.vale@mail.com","258",dateTime,true
                     ,null);
         userID = new UserDao().saveOrUpdate(user);
         user.setId(userID);
@@ -92,48 +103,14 @@ public class DataPersistence {
         
         date=LocalDate.now();
                 
-        time=LocalTime.of(3, 0);
+        time=LocalTime.of(23, 59);
         
         dateTime = LocalDateTime.of(date, time);
         
         try {
             User user;
             user = new User(
-                    "Ana Zaira","a.zaira@mail.com","123",dateTime,true
-                    ,null);
-        userID = new UserDao().saveOrUpdate(user);
-        user.setId(userID);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        
-        date=LocalDate.now();
-                
-        time=LocalTime.of(3, 0);
-        
-        dateTime = LocalDateTime.of(date, time);
-        
-        try {
-            User user;
-            user = new User(
-                    "Ana Zaira","a.zaira@mail.com","123",dateTime,true
-                    ,null);
-        userID = new UserDao().saveOrUpdate(user);
-        user.setId(userID);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        
-        date=LocalDate.now();
-                
-        time=LocalTime.of(3, 0);
-        
-        dateTime = LocalDateTime.of(date, time);
-        
-        try {
-            User user;
-            user = new User(
-                    "Ana Zaira","a.zaira@mail.com","123",dateTime,true
+                    "Fernanda Uchoa","f.vale@mail.com","369",dateTime,false
                     ,null);
         userID = new UserDao().saveOrUpdate(user);
         user.setId(userID);

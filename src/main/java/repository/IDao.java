@@ -1,4 +1,4 @@
-package br.edu.ifnmg.repository;
+package repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,6 +1,6 @@
-package br.edu.ifnmg.repository;
+package repository;
 
-import br.edu.ifnmg.entity.Entity;
+import entity.Entity;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
